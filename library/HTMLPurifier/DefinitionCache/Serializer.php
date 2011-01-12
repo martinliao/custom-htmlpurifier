@@ -155,7 +155,7 @@ class HTMLPurifier_DefinitionCache_Serializer extends
                 chmod($dir, $chmod);
                 return true;
             } elseif (filegroup($dir) === posix_getgid()) {
-                $chmod = $chmod | 0007;
+                $chmod = $chmod | 0070;
             } else {
                 // PHP's probably running as nobody, so we'll
                 // need to give global permissions
